@@ -1,7 +1,9 @@
 import serial
 import time
 import threading
-from threading import Thread
+from threading import Thread, Event
+
+
 
 class voltageThread(threading.Thread):
     def __init__(self, port, baudrate):
@@ -15,14 +17,15 @@ class voltageThread(threading.Thread):
         print('Monitoring complete')
 
 class messageThread(threading.Thread):
-    def __init__(self, port, baudrate):
+    def __init__(self, port, baudrate, record):
         threading.Thread.__init__(self)
         self.port = port
         self.baudrate = baudrate
+        self.record = record
 
     def run(self):
         print('Starting Monitoring')
-        getMessage(self.port, self.baudrate)
+        getMessage(self.port, self.baudrate, self.record)
         print('Monitoring complete')
 
 
@@ -35,20 +38,28 @@ def getVoltage(port, baudrate):
         print(line)
     ser.close()
 
-def getMessage(port, baudrate):
+def getMessage(port, baudrate, record):
     ser = serial.Serial(port, baudrate)
     ser.open()
     print("Opened serial port")
     for line in ser.read():
         print(line)
+        # if ID
+        record.set()
+
     ser.close()
 
 
 def main():
-    threadVolt = voltageThread("COM13", 9600)
-    threadVolt.start()
-    threadMessage = messageThread("COM8", 9600)
+    record = Event()
+    threadMessage = messageThread("COM8", 9600, record)
     threadMessage.start()
+    while True:
+        record.wait()
+        threadVolt = voltageThread("COM13", 9600)
+        threadVolt.start()
+        record.clear()
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
