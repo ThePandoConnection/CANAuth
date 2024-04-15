@@ -5,60 +5,67 @@ from threading import Thread, Event
 
 
 
-class voltageThread(threading.Thread):
-    def __init__(self, port, baudrate):
-        threading.Thread.__init__(self)
-        self.port = port
-        self.baudrate = baudrate
-
-    def run(self):
-        print('Starting Monitoring')
-        getVoltage(self.port, self.baudrate)
-        print('Monitoring complete')
-
-class messageThread(threading.Thread):
-    def __init__(self, port, baudrate, record):
-        threading.Thread.__init__(self)
+class voltageThread(Thread):
+    def __init__(self, port, baudrate, record, stop):
+        Thread.__init__(self)
         self.port = port
         self.baudrate = baudrate
         self.record = record
+        self.stop = stop
 
     def run(self):
         print('Starting Monitoring')
-        getMessage(self.port, self.baudrate, self.record)
+        getVoltage(self.port, self.baudrate, self.record, self.stop)
+        print('Monitoring complete')
+
+class messageThread(Thread):
+    def __init__(self, port, baudrate, record, stop):
+        Thread.__init__(self)
+        self.port = port
+        self.baudrate = baudrate
+        self.record = record
+        self.stop = stop
+
+    def run(self):
+        print('Starting Monitoring')
+        getMessage(self.port, self.baudrate, self.record, self.stop)
         print('Monitoring complete')
 
 
 
-def getVoltage(port, baudrate):
+def getVoltage(port, baudrate, record, stop):
+    if record.is_set():
+        ser = serial.Serial(port, baudrate)
+        ser.open()
+        print("Opened voltage serial port")
+        for line in ser.read():
+            print(line)
+            if stop.is_set():
+                ser.close()
+        ser.close()
+
+def getMessage(port, baudrate, record, stop):
     ser = serial.Serial(port, baudrate)
     ser.open()
-    print("Opened serial port")
+    print("Opened message serial port")
     for line in ser.read():
         print(line)
-    ser.close()
-
-def getMessage(port, baudrate, record):
-    ser = serial.Serial(port, baudrate)
-    ser.open()
-    print("Opened serial port")
-    for line in ser.read():
-        print(line)
-        # if ID
-        record.set()
-
+        if "__ID" in line:
+            print(line)
+            record.set()
+        if line == " ":
+            stop.set()
+            record.clear()
     ser.close()
 
 
 def main():
     record = Event()
-    threadMessage = messageThread("COM8", 9600, record)
+    stop = Event()
+    threadMessage = messageThread("COM8", 9600, record, stop)
     threadMessage.start()
-    while True:
-        record.wait()
-        threadVolt = voltageThread("COM13", 9600)
-        threadVolt.start()
-        record.clear()
+    threadVolt = voltageThread("COM13", 9600, record, stop)
+    threadVolt.start()
 
 
 # Press the green button in the gutter to run the script.

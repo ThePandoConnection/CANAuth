@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="set up">
+    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="attempting to start recording voltage when ID detected.">
+      <change afterPath="$PROJECT_DIR$/requirments.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CANAuth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CANAuth.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -100,7 +103,8 @@
       <workItem from="1711560149787" duration="1356000" />
       <workItem from="1711561745354" duration="259000" />
       <workItem from="1713195309970" duration="150000" />
-      <workItem from="1713196860077" duration="976000" />
+      <workItem from="1713196860077" duration="1272000" />
+      <workItem from="1713201588327" duration="691000" />
     </task>
     <task id="LOCAL-00001" summary="set up">
       <option name="closed" value="true" />
@@ -110,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711561878737</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="attempting to start recording voltage when ID detected.">
+      <option name="closed" value="true" />
+      <created>1713198121584</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713198121584</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +130,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="set up" />
-    <option name="LAST_COMMIT_MESSAGE" value="set up" />
+    <MESSAGE value="attempting to start recording voltage when ID detected." />
+    <option name="LAST_COMMIT_MESSAGE" value="attempting to start recording voltage when ID detected." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CANAuth$main.coverage" NAME="main Coverage Results" MODIFIED="1711561432618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
