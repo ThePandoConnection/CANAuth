@@ -51,7 +51,7 @@ def getMessage(port, baudrate, record, stop, share):
     print("Opened message serial port")
     for line in ser.read():
         print(line)
-        if "__ID" in line:
+        if "ID" in line:
             print(line)
             share.put(line)
             record.set()
