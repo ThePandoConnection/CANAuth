@@ -36,6 +36,7 @@ class messageThread(Thread):
 def getVoltage(port, baudrate, record, stop, share):
     if record.is_set():
         node = share.get()
+        print(node)
         ser = serial.Serial(port, baudrate)
         ser.open()
         print("Opened voltage serial port")
@@ -47,17 +48,24 @@ def getVoltage(port, baudrate, record, stop, share):
 
 def getMessage(port, baudrate, record, stop, share):
     ser = serial.Serial(port, baudrate)
-    ser.open()
     print("Opened message serial port")
-    for line in ser.read():
+    #ser.open()
+    while True:
+        line = ser.readline().decode().strip(" ")
         print(line)
-        if "ID" in line:
-            print(line)
+        if line == 1000:
+            print('Stopping Voltage Monitoring')
+            stop.set()
+        else:
             share.put(line)
             record.set()
-        if line == " ":
-            stop.set()
-            record.clear()
+        #if "ID" in line:
+            #print(line)
+            #share.put(line)
+            #record.set()
+        #if line == "stop":
+            #stop.set()
+            #record.clear()
     ser.close()
 
 
@@ -65,9 +73,9 @@ def main():
     record = Event()
     stop = Event()
     share = Queue()
-    threadMessage = messageThread("COM8", 9600, record, stop, share)
+    threadMessage = messageThread("COM6", 115200, record, stop, share)
     threadMessage.start()
-    threadVolt = voltageThread("COM13", 9600, record, stop, share)
+    threadVolt = voltageThread("COM3", 9600, record, stop, share)
     threadVolt.start()
 
 
