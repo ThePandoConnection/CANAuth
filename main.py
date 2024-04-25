@@ -35,15 +35,16 @@ class messageThread(Thread):
 
 def getVoltage(port, baudrate, record, stop, share):
     if record.is_set():
+        recording = True
         node = share.get()
         print(node)
         ser = serial.Serial(port, baudrate)
-        ser.open()
         print("Opened voltage serial port")
-        for line in ser.read():
+        while recording:
+            line = ser.readline().decode()
             print(line)
             if stop.is_set():
-                ser.close()
+                recording = False
         ser.close()
 
 def getMessage(port, baudrate, record, stop, share):
