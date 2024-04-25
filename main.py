@@ -40,12 +40,18 @@ def getVoltage(port, baudrate, record, stop, share):
         print(node)
         ser = serial.Serial(port, baudrate)
         print("Opened voltage serial port")
+        domBits = []
         while recording:
             line = ser.readline().decode()
             print(line)
+            if line < 25000:
+                domBits.append(line)
             if stop.is_set():
                 recording = False
         ser.close()
+        average = sum(domBits) / len(domBits)
+        guess = 170*(average - 2.25 * 10**4)/167
+        print(guess)
 
 def getMessage(port, baudrate, record, stop, share):
     ser = serial.Serial(port, baudrate)
