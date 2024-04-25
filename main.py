@@ -49,6 +49,7 @@ def getVoltage(port, baudrate, record, stop, share):
             if stop.is_set():
                 recording = False
         ser.close()
+        print(domBits)
         average = sum(domBits) / len(domBits)
         guess = 170*(average - 2.25 * 10**4)/167
         print(guess)
@@ -58,22 +59,16 @@ def getMessage(port, baudrate, record, stop, share):
     print("Opened message serial port")
     #ser.open()
     while True:
-        line = ser.readline().decode().strip(" ")
+        line = int(ser.readline().decode().strip(" "))
         print(line)
-        if line == 1000:
+        if line == 100:
             print('Stopping Voltage Monitoring')
             stop.set()
+            record.clear()
         else:
             share.put(line)
             record.set()
-        #if "ID" in line:
-            #print(line)
-            #share.put(line)
-            #record.set()
-        #if line == "stop":
-            #stop.set()
-            #record.clear()
-    ser.close()
+    #ser.close()
 
 
 def main():
