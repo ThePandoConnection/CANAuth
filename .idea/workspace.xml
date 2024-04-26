@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="added guess length to voltage code. equation fits perfectly so hopefully the rest of the code works. Will test everything properly when I have time.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="message code tested and seems to be working. will move over to the voltage code soon." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +120,7 @@
       <workItem from="1713959574355" duration="5255000" />
       <workItem from="1713965462635" duration="334000" />
       <workItem from="1714033510840" duration="2279000" />
-      <workItem from="1714049534046" duration="1086000" />
+      <workItem from="1714049534046" duration="1755000" />
     </task>
     <task id="LOCAL-00001" summary="set up">
       <option name="closed" value="true" />
@@ -197,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714036630089</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="message code tested and seems to be working. will move over to the voltage code soon.">
+      <option name="closed" value="true" />
+      <created>1714059827696</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714059827696</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,9 +217,10 @@
     <MESSAGE value="tested message montioring, making good progress but everythings being annoying" />
     <MESSAGE value="adjusted voltage reading code." />
     <MESSAGE value="added guess length to voltage code. equation fits perfectly so hopefully the rest of the code works. Will test everything properly when I have time." />
-    <option name="LAST_COMMIT_MESSAGE" value="added guess length to voltage code. equation fits perfectly so hopefully the rest of the code works. Will test everything properly when I have time." />
+    <MESSAGE value="message code tested and seems to be working. will move over to the voltage code soon." />
+    <option name="LAST_COMMIT_MESSAGE" value="message code tested and seems to be working. will move over to the voltage code soon." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CANAuth$main.coverage" NAME="main Coverage Results" MODIFIED="1714050296556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CANAuth$main.coverage" NAME="main Coverage Results" MODIFIED="1714050419535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
