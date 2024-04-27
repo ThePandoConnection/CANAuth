@@ -34,25 +34,26 @@ class messageThread(Thread):
 
 
 def getVoltage(port, baudrate, record, stop, share):
-    if record.is_set():
-        recording = True
-        node = share.get()
-        print(node)
-        ser = serial.Serial(port, baudrate)
-        print("Opened voltage serial port")
-        domBits = []
-        while recording:
-            line = ser.readline().decode()
-            print(line)
-            if line < 25000:
-                domBits.append(line)
-            if stop.is_set():
-                recording = False
-        ser.close()
-        print(domBits)
-        average = sum(domBits) / len(domBits)
-        guess = 170*(average - 2.25 * 10**4)/167
-        print(guess)
+    while True:
+        if record.is_set():
+            recording = True
+            node = share.get()
+            print(node)
+            ser = serial.Serial(port, baudrate)
+            print("Opened voltage serial port")
+            domBits = []
+            while recording:
+                line = ser.readline().decode()
+                print(line)
+                if line < 25000:
+                    domBits.append(line)
+                if stop.is_set():
+                    recording = False
+            ser.close()
+            print(domBits)
+            average = sum(domBits) / len(domBits)
+            length = 170*(average - 2.25 * 10**4)/167
+            print('The wire length is: ' + length)
 
 def getMessage(port, baudrate, record, stop, share):
     ser = serial.Serial(port, baudrate)
