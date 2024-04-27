@@ -45,7 +45,7 @@ def getVoltage(port, baudrate, record, stop, share):
             while recording:
                 line = ser.readline().decode()
                 print(line)
-                if line < 25000:
+                if float(line) < 25000:
                     domBits.append(line)
                 if stop.is_set():
                     recording = False
