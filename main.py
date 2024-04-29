@@ -1,12 +1,9 @@
 import serial
-import time
-from threading import Thread, Event
-from queue import Queue
+
+
 
 
 def main():
-    share = Queue()
-
     serV = serial.Serial("COM3", 9600)
     serM = serial.Serial("COM6", 115200)
     print("Opened Voltage serial port")

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="removed all the old multi threading code. still trying to figure out correct equation." />
+    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="changed equation, will test in a bit.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +128,7 @@
       <workItem from="1714121971929" duration="181000" />
       <workItem from="1714215113079" duration="11018000" />
       <workItem from="1714301843839" duration="8000" />
-      <workItem from="1714397533321" duration="486000" />
+      <workItem from="1714397533321" duration="2544000" />
     </task>
     <task id="LOCAL-00001" summary="set up">
       <option name="closed" value="true" />
@@ -247,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714397989593</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="changed equation, will test in a bit.">
+      <option name="closed" value="true" />
+      <created>1714399158404</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1714399158404</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +278,8 @@
     <MESSAGE value="first value works, so far got 60 and 33 which is within rounding error!!" />
     <MESSAGE value="code now functioning mostly, need to test values to get the length. Completely rewritten but legacy thread stuff needs removed." />
     <MESSAGE value="removed all the old multi threading code. still trying to figure out correct equation." />
-    <option name="LAST_COMMIT_MESSAGE" value="removed all the old multi threading code. still trying to figure out correct equation." />
+    <MESSAGE value="changed equation, will test in a bit." />
+    <option name="LAST_COMMIT_MESSAGE" value="changed equation, will test in a bit." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CANAuth$main.coverage" NAME="main Coverage Results" MODIFIED="1714233763554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
