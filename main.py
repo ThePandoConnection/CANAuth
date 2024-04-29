@@ -26,7 +26,7 @@ def main():
                         recording = False
                 print(serM.readline().decode().strip())
                 averageVolt = sum(voltList) / len(voltList)
-                length = 170 * (averageVolt - 2.25 * 10 ** 4) / 167
+                length = (170 * (averageVolt - 22526)) / 167 #changed voltage equation for 150 ohms
                 print('wire length is: ' + str(length))
                 voltList = []
 
