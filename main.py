@@ -1,8 +1,6 @@
 import serial
 
 
-
-
 def main():
     serV = serial.Serial("COM3", 9600)
     serM = serial.Serial("COM6", 115200)
@@ -23,7 +21,8 @@ def main():
                         recording = False
                 print(serM.readline().decode().strip())
                 averageVolt = sum(voltList) / len(voltList)
-                length = (170 * (averageVolt - 22526)) / 167 #changed voltage equation for 150 ohms
+                print(averageVolt)
+                length = (170 * (averageVolt - 22500)) / 167 #changed voltage equation for 150 ohms
                 print('wire length is: ' + str(length))
                 voltList = []
 
