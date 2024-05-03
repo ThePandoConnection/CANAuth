@@ -1,30 +1,37 @@
+import math
 import serial
 
 
 def main():
-    serV = serial.Serial("COM3", 9600)
-    serM = serial.Serial("COM6", 115200)
+    serV = serial.Serial("COM3", 9600) # Open Serial Port for Voltage
+    serM = serial.Serial("COM6", 115200) # Open Serial Port for Message content
     print("Opened Voltage serial port")
     print("Opened Message serial port")
     voltList = []
-    # ser.open()
     while True:
         try:
-            line = float(serV.readline().decode().strip())
-            if line < 25000:
+            line = float(serV.readline().decode().strip()) # Take value from Voltage reading
+            if line < 25000: # If voltage less than 25000 start recording
                 recording = True
-                while recording:
-                    lineLow = float(serV.readline().decode().strip())
-                    if lineLow < 25000:
+                while recording: # Keep looping while recording set
+                    lineLow = float(serV.readline().decode().strip()) # Record voltage value
+                    if lineLow < 25000: # If that value goes above 25000 stop recording
                         voltList.append(lineLow)
                     else:
                         recording = False
-                print(serM.readline().decode().strip())
-                averageVolt = sum(voltList) / len(voltList)
-                print(averageVolt)
-                length = (170 * (averageVolt - 22500)) / 167 #changed voltage equation for 150 ohms
-                print('wire length is: ' + str(length))
-                voltList = []
+                ID = serM.readline().decode().strip()
+                print(ID) # Print ID from message
+                averageVolt = sum(voltList) / len(voltList) # Calculate average voltage
+                print(averageVolt) # Print for data
+                length = (170 * (averageVolt - 22500)) / 167 # Calculate Length from voltage
+                print('wire length is: ' + str(length)) # Print length
+                voltList = [] # Clear average voltage list
+                if not (math.isclose(int(ID[-2:]), int(length/50))): # ID 1,2,3,4 = 50,100,150,200mm so if length/50 != ID then error
+                    print("Error: Invalid ID detected")
+                    serV.close()
+                    serM.close()
+                    break
+
 
         except ValueError:
             print("Value Error")
