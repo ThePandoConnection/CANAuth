@@ -1,4 +1,3 @@
-import math
 import serial
 
 
@@ -26,8 +25,7 @@ def main():
                 length = (170 * (averageVolt - 22500)) / 167  # Calculate Length from voltage
                 print('wire length is: ' + str(length))  # Print length
                 voltList = []  # Clear average voltage list
-                if not (math.isclose(int(ID[-2:]),
-                                     int(length / 50))):  # ID 1,2,3,4 = 50,100,150,200 so if length/50 != ID then error
+                if abs(int(ID[-2:])-int(length)/50) > 0.5:  # ID 1,2,3,4 = 50,100,150,200 so if length/50 != ID then error
                     print("Error: Invalid ID detected")
                     serV.close()
                     serM.close()
