@@ -14,7 +14,7 @@ def main():
                 recording = True
                 while recording:  # Keep looping while recording set
                     lineLow = float(serV.readline().decode().strip())  # Record voltage value
-                    if lineLow < 25000:  # If that value goes above 25000 stop recording
+                    if (lineLow < 25000):  # If that value goes above 25000 stop recording
                         voltList.append(lineLow)
                     else:
                         recording = False
@@ -25,11 +25,12 @@ def main():
                 length = (170 * (averageVolt - 22500)) / 167  # Calculate Length from voltage
                 print('wire length is: ' + str(length))  # Print length
                 voltList = []  # Clear average voltage list
-                if abs(int(ID[-2:])-int(length)/50) > 0.5:  # ID 1,2,3,4 = 50,100,150,200 so if length/50 != ID then error
+                if not (abs(int(ID[-2:])-int(length)/50) < 0.5):  # ID 1,2,3,4 = 50,100,150,200 so if length/50 != ID then error
                     print("Error: Invalid ID detected")
                     serV.close()
                     serM.close()
                     break
+
 
 
         except ValueError:
