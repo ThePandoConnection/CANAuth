@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="added datasets and Arduino Code">
+    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="added more data and changed readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +134,8 @@
       <workItem from="1714732240236" duration="1651000" />
       <workItem from="1714734065755" duration="256000" />
       <workItem from="1714734959191" duration="1261000" />
-      <workItem from="1714991700427" duration="6119000" />
+      <workItem from="1714991700427" duration="6915000" />
+      <workItem from="1715256383214" duration="90000" />
     </task>
     <task id="LOCAL-00001" summary="set up">
       <option name="closed" value="true" />
@@ -330,7 +329,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714735054582</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added more data and changed readme">
+      <option name="closed" value="true" />
+      <created>1714998117042</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1714998117042</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added more data and changed readme">
+      <option name="closed" value="true" />
+      <created>1714998210737</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1714998210737</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,9 +371,10 @@
     <MESSAGE value="cleaned up code and comments" />
     <MESSAGE value="changed error check to be more readable and a bit more fault-tolerant." />
     <MESSAGE value="added datasets and Arduino Code" />
-    <option name="LAST_COMMIT_MESSAGE" value="added datasets and Arduino Code" />
+    <MESSAGE value="added more data and changed readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more data and changed readme" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CANAuth$main.coverage" NAME="main Coverage Results" MODIFIED="1714997979176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CANAuth$main.coverage" NAME="main Coverage Results" MODIFIED="1714998060756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
