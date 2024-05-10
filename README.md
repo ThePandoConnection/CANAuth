@@ -6,7 +6,8 @@ Includes:
 - Main control Python script
 - Datasets used in the paper
 - Results used to create model
-- Results from final prototype with screenshots.
+- Results from final prototype
+- Images of each physical deliverable
 
 The library for the arduino code can be found at:
 https://docs.longan-labs.cc/114992978/#test-the-board
