@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="organised data">
+    <list default="true" id="c5165e9f-8d7f-4d69-b26a-39da1243b1af" name="Changes" comment="uploaded final bits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.235" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -137,6 +139,13 @@
       <workItem from="1715256383214" duration="90000" />
       <workItem from="1715256481473" duration="51000" />
       <workItem from="1715260759478" duration="21000" />
+      <workItem from="1715329127279" duration="67000" />
+      <workItem from="1720440223485" duration="3000" />
+      <workItem from="1720441899698" duration="10000" />
+      <workItem from="1720447363739" duration="305000" />
+      <workItem from="1720606763246" duration="33000" />
+      <workItem from="1720611210647" duration="34000" />
+      <workItem from="1720612438062" duration="4493000" />
     </task>
     <task id="LOCAL-00001" summary="set up">
       <option name="closed" value="true" />
@@ -354,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715256513149</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="uploaded final bits">
+      <option name="closed" value="true" />
+      <created>1715329184821</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1715329184821</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +399,8 @@
     <MESSAGE value="added datasets and Arduino Code" />
     <MESSAGE value="added more data and changed readme" />
     <MESSAGE value="organised data" />
-    <option name="LAST_COMMIT_MESSAGE" value="organised data" />
+    <MESSAGE value="uploaded final bits" />
+    <option name="LAST_COMMIT_MESSAGE" value="uploaded final bits" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CANAuth$main.coverage" NAME="main Coverage Results" MODIFIED="1714998060756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

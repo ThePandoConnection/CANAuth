@@ -14,7 +14,7 @@ def main():
                 recording = True
                 while recording:  # Keep looping while recording set
                     lineLow = float(serV.readline().decode().strip())  # Record voltage value
-                    if (lineLow < 25000):  # If that value goes above 25000 stop recording
+                    if lineLow < 25000:  # If that value goes above 25000 stop recording
                         voltList.append(lineLow)
                     else:
                         recording = False
